@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    RED.nodes.registerType('pdf-merger',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-file-word-o",
+        label: function() {
+            return this.name||"pdf-merger";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="pdf-merger">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name" />
+      </div>
+
+      <div class="form-row">
+        <label for="node-input-output"><i class="fa fa-print"></i> Filename</label>
+        <input type="text" id="node-input-filename" placeholder="Filename" />
+        <label for="node-input-output"><i class="fa fa-file"></i> Outfile</label>
+        <input type="text" id="node-input-outfile" placeholder="Outfile" />
+      </div>
+</script>
+
+<script type="text/html" data-help-name="pdf-merger">
+    <p>pdf-merger node u kullanılarak word üzerinde oluşturulan şablon msg.payload içerisindeki meta veri ile doldurularak yeni bir word belgesi oluşturur.</p>
+    <p>Meta verileri msg.payload objesinden almaktadır.</p>
+    <p>Kullanılacak olan word şablonunun yolu node içerisindeki Template(Docx) alanı doldurularak veya msg.templateDocx kullanılarak path verilebilir.</p>
+    <p>Meta veri ile üretilen word dosyası hiç bir path verilmez ise node çıkışında buffer olarak çıktı verecektir.</p>
+    <p>Çıktıyı buffer değil dosya olarak çıkartılması isteniyorsa Node üzerindeki Outfile alanı veya msg.outFile doldurulmalıdır.</p>
+
+</script>
