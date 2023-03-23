@@ -4,7 +4,7 @@
   "description": "pdf merger",
   "node-red": {
     "nodes": {
-      "pdf-merger": "pdf-merger.js"
+      "pdf-merger": "pdf-merger/pdf-merger.js"
     }
   },
   "repository": {
