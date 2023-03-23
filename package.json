@@ -2,9 +2,10 @@
   "name": "node-red-contrib-pdf-merger",
   "version": "1.0.0",
   "description": "pdf merger",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "node-red": {
+    "nodes": {
+      "pdf-merger": "pdf-merger.js"
+    }
   },
   "repository": {
     "type": "git",
