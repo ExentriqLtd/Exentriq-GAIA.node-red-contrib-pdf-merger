@@ -1,14 +1,13 @@
 const PDFMerger = require("pdf-merger-js");
-const { promisify } = require("util");
 const merger = new PDFMerger();
 
-const pdfMerger = async (filename,page,outFile) => {
-  await merger.add(filename),page;
+const toMerge = async (filename, page, outFile) => {
+  await merger.add(filename), page;
 
   const mergedPdfBuffer = await merger.saveAsBuffer();
-  return mergedPdfBuffer
-  // fs.writeSync('merged.pdf', mergedPdfBuffer);
-  
+  if (!outFile) return mergedPdfBuffer;
+  fs.writeSync("merged.pdf", mergedPdfBuffer);
+  return outFile;
 };
 
 module.exports = function (RED) {
@@ -18,11 +17,9 @@ module.exports = function (RED) {
     node.on("input", async function (msg) {
       const filename = config.filename || msg.filename;
       const page = msg.payload || "";
+      const outFile = msg.outFile || config.outFile;
       try {
-        const merged =  pdfMerger({
-            filename,
-            page
-        });
+        const merged = await toMerge(filename, page, outFile);
         msg.payload = merged;
         node.send(msg);
       } catch (error) {
