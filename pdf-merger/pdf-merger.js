@@ -1,7 +1,3 @@
-// payload = [{
-//   fileName: "/....",
-//   page: ""
-// }]
 const PDFMerger = require("pdf-merger-js");
 const merger = new PDFMerger();
 
@@ -15,7 +11,6 @@ const toMerge = async (payload, outFile) => {
   fs.writeSync("merged.pdf", mergedPdfBuffer);
   return outFile;
 };
-hvj
 module.exports = function (RED) {
   function pdfMerger(config) {
     RED.nodes.createNode(this, config);
