@@ -1,18 +1,27 @@
 {
   "name": "node-red-contrib-pdf-merger",
   "version": "1.0.0",
-  "description": "pdf merger",
+  "description": "Node-Red merge multiple PDF documents, or parts of them, to one new PDF document.",
   "node-red": {
     "nodes": {
       "pdf-merger": "pdf-merger/pdf-merger.js"
     }
   },
+  "contributors": [
+    {
+      "name": "Ömer Kaptan"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/omerkaptan/node-red-contrib-pdf-merger.git"
   },
   "keywords": [
-    "pdf"
+    "pdf",
+    "merger",
+    "merge",
+    "adobe",
+    "node-red"
   ],
   "author": "Ömer KAPTAN",
   "license": "MIT",
