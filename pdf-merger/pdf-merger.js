@@ -5,7 +5,6 @@ const toMerge = async (payload, outFile) => {
   payload.forEach(async (element) => {
     await merger.add(element.fileName), element.page;
   });
-
   const mergedPdfBuffer = await merger.saveAsBuffer();
   if (!outFile) return mergedPdfBuffer;
   fs.writeSync("merged.pdf", mergedPdfBuffer);
