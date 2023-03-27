@@ -4,7 +4,7 @@ This Node-Red Node can merge multiple PDF documents, or parts of them, to one ne
 
 ## Installation
 
-To install the package, run the following command in your Node-RED user directory (typically `~/.node-red`)
+To install the package, run the following command in your Node-RED user directory (typically `~/.node-red`);
 
 ```bash
 npm install node-red-contrib-pdf-merger
