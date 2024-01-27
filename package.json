@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/omerkaptan/node-red-contrib-pdf-merger#readme",
   "dependencies": {
-    "pdf-merger-js": "^4.3.0"
+    "pdf-merger-js": "^4.3.0",
+    "fs":"*"
   }
 }
